@@ -2,13 +2,123 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Big Data Q\nA\n\n\n1. What is \"Big Data\"? \n1\n\n\n\n[embed]https://www.youtube.com/watch?v=TzxmjbL-i4Y[/embed]\n\n\n2. How big is big data? \n2\n\n\n\n\n\n3. How much data is \"Big Data\"? \n3\n\n\n\n\n\n4. What are characteristics of \"Big Data\"? \n4\n\n\n\n\n\n5. What is big data ecosystem? \n5\n\n\n\n\n\n6. What is big data landscape \n6\n\n\n\n\n\n7. What are benefits of big data? \n7\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.youtube.com/watch?v=TzxmjbL-i4Y\n\n\n\n\n\n\nhttp://scoop.intel.com/what-happens-in-an-internet-minute/\n\n\n\n\n\n\nhttp://www.quora.com/How-much-data-is-Big-Data\n\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/Big_data#Characteristics\n\n\n\n\n\n\nhttp://www.clearpeaks.com/blog/big-data/big-data-ecosystem-spark-and-tableau\n\n\n\n\n\n\nhttps://vladimerbotsvadze.wordpress.com/2015/01/28/the-big-data-landscape-technology-businessintelligence-analytics/\n\n\n\n\n\n\nhttp://blog.galaxyweblinks.com/big-data-with-bigger-benefits/", 
+            "text": "Big Data Q\nA\n\n\n1. What is \"Big Data\"? \n1\n\n\nhttps://www.youtube.com/watch?v=TzxmjbL-i4Y\n\n\n2. How big is big data? \n2\n\n\n\n\n3. How much data is \"Big Data\"? \n3\n\n\n\n\n4. What are characteristics of \"Big Data\"? \n4\n\n\n\n\n5. What is big data ecosystem? \n5\n\n\n\n\n6. What is big data landscape \n6\n\n\n\n\n7. What are benefits of big data? \n7\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.youtube.com/watch?v=TzxmjbL-i4Y\n\n\n\n\n\n\nhttp://scoop.intel.com/what-happens-in-an-internet-minute/\n\n\n\n\n\n\nhttp://www.quora.com/How-much-data-is-Big-Data\n\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/Big_data#Characteristics\n\n\n\n\n\n\nhttp://www.clearpeaks.com/blog/big-data/big-data-ecosystem-spark-and-tableau\n\n\n\n\n\n\nhttps://vladimerbotsvadze.wordpress.com/2015/01/28/the-big-data-landscape-technology-businessintelligence-analytics/\n\n\n\n\n\n\nhttp://blog.galaxyweblinks.com/big-data-with-bigger-benefits/", 
             "title": "Home"
         }, 
         {
             "location": "/#big-data-qa", 
             "text": "", 
             "title": "Big Data Q&amp;A"
+        }, 
+        {
+            "location": "/#1-what-is-big-data-1", 
+            "text": "https://www.youtube.com/watch?v=TzxmjbL-i4Y", 
+            "title": "1. What is \"Big Data\"? 1"
+        }, 
+        {
+            "location": "/#2-how-big-is-big-data-2", 
+            "text": "", 
+            "title": "2. How big is big data? 2"
+        }, 
+        {
+            "location": "/#3-how-much-data-is-big-data-3", 
+            "text": "", 
+            "title": "3. How much data is \"Big Data\"? 3"
+        }, 
+        {
+            "location": "/#4-what-are-characteristics-of-big-data-4", 
+            "text": "", 
+            "title": "4. What are characteristics of \"Big Data\"? 4"
+        }, 
+        {
+            "location": "/#5-what-is-big-data-ecosystem-5", 
+            "text": "", 
+            "title": "5. What is big data ecosystem? 5"
+        }, 
+        {
+            "location": "/#6-what-is-big-data-landscape-6", 
+            "text": "", 
+            "title": "6. What is big data landscape 6"
+        }, 
+        {
+            "location": "/#7-what-are-benefits-of-big-data-7", 
+            "text": "https://www.youtube.com/watch?v=TzxmjbL-i4Y    http://scoop.intel.com/what-happens-in-an-internet-minute/    http://www.quora.com/How-much-data-is-Big-Data    https://en.wikipedia.org/wiki/Big_data#Characteristics    http://www.clearpeaks.com/blog/big-data/big-data-ecosystem-spark-and-tableau    https://vladimerbotsvadze.wordpress.com/2015/01/28/the-big-data-landscape-technology-businessintelligence-analytics/    http://blog.galaxyweblinks.com/big-data-with-bigger-benefits/", 
+            "title": "7. What are benefits of big data? 7"
+        }, 
+        {
+            "location": "/hdfs/", 
+            "text": "HDFS\n\n\n\n\n\n  The Hadoop Distributed File System (HDFS) \u2014 a subproject of the Apache Hadoop project\u2014is a distributed, highly fault-tolerant file system designed to run on low-cost commodity hardware. HDFS provides high-throughput access to application data and is suitable for applications with large data sets. This article explores the primary features of HDFS and provides a high-level view of the HDFS architecture.\n\n\n\n\n: \nsequenceiq/hadoop-docker\n\n\nBig Data Stack\n: \nHDFS\n, \nKibana\n, \nElasticSearch\n, \nNeo4J\n, \nApache Spark", 
+            "title": "HDFS"
+        }, 
+        {
+            "location": "/hdfs/#hdfs", 
+            "text": "The Hadoop Distributed File System (HDFS) \u2014 a subproject of the Apache Hadoop project\u2014is a distributed, highly fault-tolerant file system designed to run on low-cost commodity hardware. HDFS provides high-throughput access to application data and is suitable for applications with large data sets. This article explores the primary features of HDFS and provides a high-level view of the HDFS architecture.  :  sequenceiq/hadoop-docker  Big Data Stack :  HDFS ,  Kibana ,  ElasticSearch ,  Neo4J ,  Apache Spark", 
+            "title": "HDFS"
+        }, 
+        {
+            "location": "/hbase/", 
+            "text": "HBase\n\n\n\n  Apache HBase\u2122 is the Hadoop database, a distributed, scalable, big data store.  Download Apache HBase\u2122  Click here to download Apache HBase\u2122.\n\n\n\n\n\n\n1. When Would I Use Apache HBase? \n1\n\n\n\nHBase isn\u2019t suitable for every problem.\n\n\nFirst, make sure you have enough data. If you have hundreds of millions or billions of rows, then HBase is a good candidate. If you only have a few thousand/million rows, then using a traditional RDBMS might be a better choice due to the fact that all of your data might wind up on a single node (or two) and the rest of the cluster may be sitting idle.\n\n\nSecond, make sure you can live without all the extra features that an RDBMS provides (e.g., typed columns, secondary indexes, transactions, advanced query languages, etc.) An application built against an RDBMS cannot be \"ported\" to HBase by simply changing a JDBC driver, for example. Consider moving from an RDBMS to HBase as a complete redesign as opposed to a port.\n\n\nThird, make sure you have enough hardware. Even HDFS doesn\u2019t do well with anything less than 5 DataNodes (due to things such as HDFS block replication which has a default of 3), plus a NameNode.\n\n\nHBase can run quite well stand-alone on a laptop - but this should be considered a development configuration only.\n\n\n2. Features \n2\n\n\n\n\n\nLinear and modular scalability.\n\n\nStrictly consistent reads and writes.\n\n\nAutomatic and configurable sharding of tables\n\n\nAutomatic failover support between RegionServers.\n\n\nConvenient base classes for backing Hadoop MapReduce jobs with Apache HBase tables.\n\n\nEasy to use Java API for client access.\n\n\nBlock cache and Bloom Filters for real-time queries.\n\n\nQuery predicate push down via server side Filters\n\n\nThrift gateway and a REST-ful Web service that supports XML, Protobuf, and binary data encoding options\n\n\nExtensible jruby-based (JIRB) shell\n\n\nSupport for exporting metrics via the Hadoop metrics subsystem to files or Ganglia; or via JMX\n\n\n\n\n\n3. Architecture\n\n\n\n\n\nHBase Shell\n\n\n\n[code lang=\"shell\"]\n\n\nlist all table\n\n\nlist\n[/code]\n\n\nUp \n Running\n\n\n\n1. Download \n\n\n\nHBase 0.94.27 (HBase 0.98 won't work)\n\n\n[code lang=\"shell\"]\nwget https://www.apache.org/dist/hbase/hbase-0.94.27/hbase-0.94.27.tar.gz\ntar -xzf hbase-0.94.27.tar.gz\n[/code]\n\n\n2. Setup \n\n\n\n1.\n edit \n$HBASE_ROOT/conf/hbase-site.xml\n and add\n\n\n[code lang=\"xml\"]\n\n\n  \n\n    \nhbase.rootdir\n\n    \nfile:///full/path/to/where/the/data/should/be/stored\n\n  \n\n  \n\n    \nhbase.cluster.distributed\n\n    \nfalse\n\n  \n\n\n\n[/code]\n\n\n3. Verify \n\n\n\nGo to \nhttp://localhost:60010\n to see if HBase is running.\n\n\n\n\n\n\n\n\n\n\n\nWhen Should I Use HBase?\n\n\n\n\n\n\n\nHBase\n\n\n\n\n\n\n\n\n\n\nConfig HBase Remote\n\n\n1. Change \n/etc/hosts\n\n\n[code]\n127.0.0.1 [username]\n[server_ip] hbase.io\n[/code]\n\n\nExample\n\n\n[code]\n127.0.0.1 crawler\n192.168.0.151 hbase.io\n[/code]\n\n\n2. Change hostname\n\n\n[code]\nhostname hbase.io\n[/code]\n\n\n3. Change region servers\n\n\nEdit \n$HBASE_ROOT/conf/regionservers\n\n\n[code]\nhbase.io\n[/code]\n\n\n4. Change \n$HABSE_ROOT/conf/hbase-site.xml\n\n\n[code lang=\"xml\" title=\"hbase-site.xml\"]\n\n?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?\n\n\n\n\n\n\nhbase.rootdir\n\n\nfile:///home/username/Downloads/hbase/data\n\n\n\n\n\n\nhbase.cluster.distributed\n\n\nfalse\n\n\n\n\n\n\nhbase.zookeeper.quorum\n\n\nhbase.io\n\n\n\n\n\n\nzookeeper.znode.parent\n\n\n/hbase-unsecure\n\n\n\n\n\n\nhbase.rpc.timeout\n\n\n2592000000\n\n\n\n\n\n[/code]\n\n\nDocker\n\n\nHBase 0.94\n\n\nImage: https://github.com/Banno/docker-hbase-standalone\n\n\n[code]\ndocker run -d -p 2181:2181 -p 60000:60000 -p 60010:60010 -p 60020:60020 -p 60030:60030 banno/hbase-standalone\n[/code]\n\n\nCompose\n\n\n[code]\nhbase.vmware:\n    build: ./docker-hbase-standalone/.\n    command: \"/opt/hbase/hbase-0.94.15-cdh4.7.0/bin/hbase master start\"\n    hostname: hbase.vmware\n    ports:\n      - 2181:2181\n      - 60000:60000\n      - 60010:60010\n      - 60020:60020\n      - 60030:60030\n    volumes:\n      - ./docker-hbase-standalone/hbase-0.94.15-cdh4.7.0:/opt/hbase/hbase-0.94.15-cdh4.7.0\n      - ./data/hbase:/tmp/hbase-root/hbase\n/code]", 
+            "title": "Apache HBase"
+        }, 
+        {
+            "location": "/hbase/#hbase", 
+            "text": "Apache HBase\u2122 is the Hadoop database, a distributed, scalable, big data store.  Download Apache HBase\u2122  Click here to download Apache HBase\u2122.", 
+            "title": "HBase"
+        }, 
+        {
+            "location": "/hbase/#list-all-table", 
+            "text": "list\n[/code]", 
+            "title": "list all table"
+        }, 
+        {
+            "location": "/hbase/#config-hbase-remote", 
+            "text": "", 
+            "title": "Config HBase Remote"
+        }, 
+        {
+            "location": "/hbase/#1-change-etchosts", 
+            "text": "[code]\n127.0.0.1 [username]\n[server_ip] hbase.io\n[/code]  Example  [code]\n127.0.0.1 crawler\n192.168.0.151 hbase.io\n[/code]", 
+            "title": "1. Change /etc/hosts"
+        }, 
+        {
+            "location": "/hbase/#2-change-hostname", 
+            "text": "[code]\nhostname hbase.io\n[/code]", 
+            "title": "2. Change hostname"
+        }, 
+        {
+            "location": "/hbase/#3-change-region-servers", 
+            "text": "Edit  $HBASE_ROOT/conf/regionservers  [code]\nhbase.io\n[/code]", 
+            "title": "3. Change region servers"
+        }, 
+        {
+            "location": "/hbase/#4-change-habse_rootconfhbase-sitexml", 
+            "text": "[code lang=\"xml\" title=\"hbase-site.xml\"] ?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?    hbase.rootdir  file:///home/username/Downloads/hbase/data    hbase.cluster.distributed  false    hbase.zookeeper.quorum  hbase.io    zookeeper.znode.parent  /hbase-unsecure    hbase.rpc.timeout  2592000000   \n[/code]", 
+            "title": "4. Change $HABSE_ROOT/conf/hbase-site.xml"
+        }, 
+        {
+            "location": "/hbase/#docker", 
+            "text": "HBase 0.94  Image: https://github.com/Banno/docker-hbase-standalone  [code]\ndocker run -d -p 2181:2181 -p 60000:60000 -p 60010:60010 -p 60020:60020 -p 60030:60030 banno/hbase-standalone\n[/code]  Compose  [code]\nhbase.vmware:\n    build: ./docker-hbase-standalone/.\n    command: \"/opt/hbase/hbase-0.94.15-cdh4.7.0/bin/hbase master start\"\n    hostname: hbase.vmware\n    ports:\n      - 2181:2181\n      - 60000:60000\n      - 60010:60010\n      - 60020:60020\n      - 60030:60030\n    volumes:\n      - ./docker-hbase-standalone/hbase-0.94.15-cdh4.7.0:/opt/hbase/hbase-0.94.15-cdh4.7.0\n      - ./data/hbase:/tmp/hbase-root/hbase\n/code]", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/spark/", 
+            "text": "Apache Spark\n\n\n\n\n\n  Apache Spark is an open-source \ncluster computing framework\n originally developed in the AMPLab at UC Berkeley. In contrast to Hadoop's two-stage disk-based MapReduce paradigm, Spark's in-memory primitives provide performance up to 100 times faster for certain applications. By allowing user programs to load data into a cluster's memory and query it repeatedly, Spark is well-suited to machine learning algorithms.\n\n\n\n\nInstallation\n\n\n\nRequirements: Hadoop, YARN\n\n\nInstall Hadoop\n\n\nInsatll YARN\n\n\nInstall Java\n\n\nVerification\n\n\n\nTutorial\n\n\n\nFrom Pandas to Apache Spark\u2019s DataFrame\n\n\nBig Data Stack\n: \nHDFS\n, \nKibana\n, \nElasticSearch\n, \nNeo4J\n, \nApache Spark\n\n\nApache Spark: Tutorials\n\n\nBeginners Guide: Apache Spark Machine Learning with Large Data\n\n\n\n\nSpark and Spark Streaming Unit Testing\n\n\nRecipes for Running Spark Streaming Applications in Production- Databricks\n\n\nSpark Streaming\n\n\n\n\nSpark and Spark Streaming Unit Testing\n\n\nRecipes for Running Spark Streaming Applications in Production- Databricks", 
+            "title": "Apache Spark"
+        }, 
+        {
+            "location": "/spark/#apache-spark", 
+            "text": "Apache Spark is an open-source  cluster computing framework  originally developed in the AMPLab at UC Berkeley. In contrast to Hadoop's two-stage disk-based MapReduce paradigm, Spark's in-memory primitives provide performance up to 100 times faster for certain applications. By allowing user programs to load data into a cluster's memory and query it repeatedly, Spark is well-suited to machine learning algorithms.", 
+            "title": "Apache Spark"
+        }, 
+        {
+            "location": "/spark/#apache-spark-tutorials", 
+            "text": "Beginners Guide: Apache Spark Machine Learning with Large Data", 
+            "title": "Apache Spark: Tutorials"
+        }, 
+        {
+            "location": "/spark/#spark-streaming", 
+            "text": "Spark and Spark Streaming Unit Testing  Recipes for Running Spark Streaming Applications in Production- Databricks", 
+            "title": "Spark Streaming"
         }, 
         {
             "location": "/ambari/", 
@@ -129,81 +239,6 @@
             "location": "/nutch/#web-scrapping", 
             "text": "What are some good free web scrapers / scraping techniques?  Import.io | Web Data Platform   Free Web Scraping Tool is a very useful tool and very easy to use. Import can operate in \u201cMagic\u201d mode where you point it at a URL and it slices and dices the content to produce a table automatically. The \"Magic Api\" page also provides options for re-running the query and downloading the results in JSON or tab-separated variable format.  commoncrawl  [Feed Aggregators]  [API]", 
             "title": "Web Scrapping"
-        }, 
-        {
-            "location": "/spark/", 
-            "text": "Apache Spark\n\n\n\n\n\n  Apache Spark is an open-source \ncluster computing framework\n originally developed in the AMPLab at UC Berkeley. In contrast to Hadoop's two-stage disk-based MapReduce paradigm, Spark's in-memory primitives provide performance up to 100 times faster for certain applications. By allowing user programs to load data into a cluster's memory and query it repeatedly, Spark is well-suited to machine learning algorithms.\n\n\n\n\nInstallation\n\n\n\nRequirements: Hadoop, YARN\n\n\nInstall Hadoop\n\n\nInsatll YARN\n\n\nInstall Java\n\n\nVerification\n\n\n\nTutorial\n\n\n\nFrom Pandas to Apache Spark\u2019s DataFrame\n\n\nBig Data Stack\n: \nHDFS\n, \nKibana\n, \nElasticSearch\n, \nNeo4J\n, \nApache Spark\n\n\nApache Spark: Tutorials\n\n\nBeginners Guide: Apache Spark Machine Learning with Large Data\n\n\n\n\nSpark and Spark Streaming Unit Testing\n\n\nRecipes for Running Spark Streaming Applications in Production- Databricks\n\n\nSpark Streaming\n\n\n\n\nSpark and Spark Streaming Unit Testing\n\n\nRecipes for Running Spark Streaming Applications in Production- Databricks", 
-            "title": "Apache Spark"
-        }, 
-        {
-            "location": "/spark/#apache-spark", 
-            "text": "Apache Spark is an open-source  cluster computing framework  originally developed in the AMPLab at UC Berkeley. In contrast to Hadoop's two-stage disk-based MapReduce paradigm, Spark's in-memory primitives provide performance up to 100 times faster for certain applications. By allowing user programs to load data into a cluster's memory and query it repeatedly, Spark is well-suited to machine learning algorithms.", 
-            "title": "Apache Spark"
-        }, 
-        {
-            "location": "/spark/#apache-spark-tutorials", 
-            "text": "Beginners Guide: Apache Spark Machine Learning with Large Data", 
-            "title": "Apache Spark: Tutorials"
-        }, 
-        {
-            "location": "/spark/#spark-streaming", 
-            "text": "Spark and Spark Streaming Unit Testing  Recipes for Running Spark Streaming Applications in Production- Databricks", 
-            "title": "Spark Streaming"
-        }, 
-        {
-            "location": "/hbase/", 
-            "text": "HBase\n\n\n\n  Apache HBase\u2122 is the Hadoop database, a distributed, scalable, big data store.  Download Apache HBase\u2122  Click here to download Apache HBase\u2122.\n\n\n\n\n\n\n1. When Would I Use Apache HBase? \n1\n\n\n\nHBase isn\u2019t suitable for every problem.\n\n\nFirst, make sure you have enough data. If you have hundreds of millions or billions of rows, then HBase is a good candidate. If you only have a few thousand/million rows, then using a traditional RDBMS might be a better choice due to the fact that all of your data might wind up on a single node (or two) and the rest of the cluster may be sitting idle.\n\n\nSecond, make sure you can live without all the extra features that an RDBMS provides (e.g., typed columns, secondary indexes, transactions, advanced query languages, etc.) An application built against an RDBMS cannot be \"ported\" to HBase by simply changing a JDBC driver, for example. Consider moving from an RDBMS to HBase as a complete redesign as opposed to a port.\n\n\nThird, make sure you have enough hardware. Even HDFS doesn\u2019t do well with anything less than 5 DataNodes (due to things such as HDFS block replication which has a default of 3), plus a NameNode.\n\n\nHBase can run quite well stand-alone on a laptop - but this should be considered a development configuration only.\n\n\n2. Features \n2\n\n\n\n\n\nLinear and modular scalability.\n\n\nStrictly consistent reads and writes.\n\n\nAutomatic and configurable sharding of tables\n\n\nAutomatic failover support between RegionServers.\n\n\nConvenient base classes for backing Hadoop MapReduce jobs with Apache HBase tables.\n\n\nEasy to use Java API for client access.\n\n\nBlock cache and Bloom Filters for real-time queries.\n\n\nQuery predicate push down via server side Filters\n\n\nThrift gateway and a REST-ful Web service that supports XML, Protobuf, and binary data encoding options\n\n\nExtensible jruby-based (JIRB) shell\n\n\nSupport for exporting metrics via the Hadoop metrics subsystem to files or Ganglia; or via JMX\n\n\n\n\n\n3. Architecture\n\n\n\n\n\nHBase Shell\n\n\n\n[code lang=\"shell\"]\n\n\nlist all table\n\n\nlist\n[/code]\n\n\nUp \n Running\n\n\n\n1. Download \n\n\n\nHBase 0.94.27 (HBase 0.98 won't work)\n\n\n[code lang=\"shell\"]\nwget https://www.apache.org/dist/hbase/hbase-0.94.27/hbase-0.94.27.tar.gz\ntar -xzf hbase-0.94.27.tar.gz\n[/code]\n\n\n2. Setup \n\n\n\n1.\n edit \n$HBASE_ROOT/conf/hbase-site.xml\n and add\n\n\n[code lang=\"xml\"]\n\n\n  \n\n    \nhbase.rootdir\n\n    \nfile:///full/path/to/where/the/data/should/be/stored\n\n  \n\n  \n\n    \nhbase.cluster.distributed\n\n    \nfalse\n\n  \n\n\n\n[/code]\n\n\n3. Verify \n\n\n\nGo to \nhttp://localhost:60010\n to see if HBase is running.\n\n\n\n\n\n\n\n\n\n\n\nWhen Should I Use HBase?\n\n\n\n\n\n\n\nHBase\n\n\n\n\n\n\n\n\n\n\nConfig HBase Remote\n\n\n1. Change \n/etc/hosts\n\n\n[code]\n127.0.0.1 [username]\n[server_ip] hbase.io\n[/code]\n\n\nExample\n\n\n[code]\n127.0.0.1 crawler\n192.168.0.151 hbase.io\n[/code]\n\n\n2. Change hostname\n\n\n[code]\nhostname hbase.io\n[/code]\n\n\n3. Change region servers\n\n\nEdit \n$HBASE_ROOT/conf/regionservers\n\n\n[code]\nhbase.io\n[/code]\n\n\n4. Change \n$HABSE_ROOT/conf/hbase-site.xml\n\n\n[code lang=\"xml\" title=\"hbase-site.xml\"]\n\n?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?\n\n\n\n\n\n\nhbase.rootdir\n\n\nfile:///home/username/Downloads/hbase/data\n\n\n\n\n\n\nhbase.cluster.distributed\n\n\nfalse\n\n\n\n\n\n\nhbase.zookeeper.quorum\n\n\nhbase.io\n\n\n\n\n\n\nzookeeper.znode.parent\n\n\n/hbase-unsecure\n\n\n\n\n\n\nhbase.rpc.timeout\n\n\n2592000000\n\n\n\n\n\n[/code]\n\n\nDocker\n\n\nHBase 0.94\n\n\nImage: https://github.com/Banno/docker-hbase-standalone\n\n\n[code]\ndocker run -d -p 2181:2181 -p 60000:60000 -p 60010:60010 -p 60020:60020 -p 60030:60030 banno/hbase-standalone\n[/code]\n\n\nCompose\n\n\n[code]\nhbase.vmware:\n    build: ./docker-hbase-standalone/.\n    command: \"/opt/hbase/hbase-0.94.15-cdh4.7.0/bin/hbase master start\"\n    hostname: hbase.vmware\n    ports:\n      - 2181:2181\n      - 60000:60000\n      - 60010:60010\n      - 60020:60020\n      - 60030:60030\n    volumes:\n      - ./docker-hbase-standalone/hbase-0.94.15-cdh4.7.0:/opt/hbase/hbase-0.94.15-cdh4.7.0\n      - ./data/hbase:/tmp/hbase-root/hbase\n/code]", 
-            "title": "Apache HBase"
-        }, 
-        {
-            "location": "/hbase/#hbase", 
-            "text": "Apache HBase\u2122 is the Hadoop database, a distributed, scalable, big data store.  Download Apache HBase\u2122  Click here to download Apache HBase\u2122.", 
-            "title": "HBase"
-        }, 
-        {
-            "location": "/hbase/#list-all-table", 
-            "text": "list\n[/code]", 
-            "title": "list all table"
-        }, 
-        {
-            "location": "/hbase/#config-hbase-remote", 
-            "text": "", 
-            "title": "Config HBase Remote"
-        }, 
-        {
-            "location": "/hbase/#1-change-etchosts", 
-            "text": "[code]\n127.0.0.1 [username]\n[server_ip] hbase.io\n[/code]  Example  [code]\n127.0.0.1 crawler\n192.168.0.151 hbase.io\n[/code]", 
-            "title": "1. Change /etc/hosts"
-        }, 
-        {
-            "location": "/hbase/#2-change-hostname", 
-            "text": "[code]\nhostname hbase.io\n[/code]", 
-            "title": "2. Change hostname"
-        }, 
-        {
-            "location": "/hbase/#3-change-region-servers", 
-            "text": "Edit  $HBASE_ROOT/conf/regionservers  [code]\nhbase.io\n[/code]", 
-            "title": "3. Change region servers"
-        }, 
-        {
-            "location": "/hbase/#4-change-habse_rootconfhbase-sitexml", 
-            "text": "[code lang=\"xml\" title=\"hbase-site.xml\"] ?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?    hbase.rootdir  file:///home/username/Downloads/hbase/data    hbase.cluster.distributed  false    hbase.zookeeper.quorum  hbase.io    zookeeper.znode.parent  /hbase-unsecure    hbase.rpc.timeout  2592000000   \n[/code]", 
-            "title": "4. Change $HABSE_ROOT/conf/hbase-site.xml"
-        }, 
-        {
-            "location": "/hbase/#docker", 
-            "text": "HBase 0.94  Image: https://github.com/Banno/docker-hbase-standalone  [code]\ndocker run -d -p 2181:2181 -p 60000:60000 -p 60010:60010 -p 60020:60020 -p 60030:60030 banno/hbase-standalone\n[/code]  Compose  [code]\nhbase.vmware:\n    build: ./docker-hbase-standalone/.\n    command: \"/opt/hbase/hbase-0.94.15-cdh4.7.0/bin/hbase master start\"\n    hostname: hbase.vmware\n    ports:\n      - 2181:2181\n      - 60000:60000\n      - 60010:60010\n      - 60020:60020\n      - 60030:60030\n    volumes:\n      - ./docker-hbase-standalone/hbase-0.94.15-cdh4.7.0:/opt/hbase/hbase-0.94.15-cdh4.7.0\n      - ./data/hbase:/tmp/hbase-root/hbase\n/code]", 
-            "title": "Docker"
-        }, 
-        {
-            "location": "/hdfs/", 
-            "text": "HDFS\n\n\n\n\n\n  The Hadoop Distributed File System (HDFS) \u2014 a subproject of the Apache Hadoop project\u2014is a distributed, highly fault-tolerant file system designed to run on low-cost commodity hardware. HDFS provides high-throughput access to application data and is suitable for applications with large data sets. This article explores the primary features of HDFS and provides a high-level view of the HDFS architecture.\n\n\n\n\n: \nsequenceiq/hadoop-docker\n\n\nBig Data Stack\n: \nHDFS\n, \nKibana\n, \nElasticSearch\n, \nNeo4J\n, \nApache Spark", 
-            "title": "HDFS"
-        }, 
-        {
-            "location": "/hdfs/#hdfs", 
-            "text": "The Hadoop Distributed File System (HDFS) \u2014 a subproject of the Apache Hadoop project\u2014is a distributed, highly fault-tolerant file system designed to run on low-cost commodity hardware. HDFS provides high-throughput access to application data and is suitable for applications with large data sets. This article explores the primary features of HDFS and provides a high-level view of the HDFS architecture.  :  sequenceiq/hadoop-docker  Big Data Stack :  HDFS ,  Kibana ,  ElasticSearch ,  Neo4J ,  Apache Spark", 
-            "title": "HDFS"
         }, 
         {
             "location": "/kibana/", 
