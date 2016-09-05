@@ -70,7 +70,7 @@ elasticsearch provides a full <a href="https://www.elastic.co/guide/en/elasticse
   curl -XPOST /bank/_search
 </blockquote>
 
-[code language="javascript"]
+```javascript
 // match all, limit 10 offset 10
 {
   "query": { "match_all": {} },
@@ -89,11 +89,11 @@ elasticsearch provides a full <a href="https://www.elastic.co/guide/en/elasticse
 {
   "query": { "match": { "account_number": 20 } }
 }
-[/code]
+```
 
 <strong>Filter</strong>
 
-[code]
+```
 curl -XPOST elastic:9200/index/type/_search -d '
 {
   "query" : {
@@ -115,11 +115,11 @@ curl -XPOST elastic:9200/index/type/_search -d '
     }
   }
 }
-[/code]
+```
 
 **Sort**
 
-[code]
+```
 curl -XPOST elastic:9200/index/type/_search -d '
 {
   "query" : {
@@ -141,7 +141,7 @@ curl -XPOST elastic:9200/index/type/_search -d '
     }
   }
 }
-[/code]
+```
 <h3>3. Mapping</h3>
 
 <h4>Timestamp <sup id="fnref-1210-2"><a href="#fn-1210-2" rel="footnote">2</a></sup></h4>
@@ -152,7 +152,7 @@ Enable and store timestamp
   curl -XPOST localhost:9200/test
 </blockquote>
 
-[code]
+```
 {
 "mappings" : {
     "_default_":{
@@ -163,7 +163,7 @@ Enable and store timestamp
     }
   }
 }'
-[/code]
+```
 
 
 
@@ -209,17 +209,17 @@ Enable and store timestamp
 
 Tools for moving and saving indicies.
 
-[code]
+```
 bin/elasticdump
   --input=http://localhost:9200/index_1
   --output=http://localhost:9200/index_1_backup
   --type=data
   --scrollTime=100
-[/code]
+```
 
 <h4>Alias <sup id="fnref-1210-5"><a href="#fn-1210-5" rel="footnote">6</a></sup></h4>
 
-[code]
+```
 curl -XPOST 'http://localhost:9200/_aliases' -d '
 {
     &quot;actions&quot; : [
@@ -227,7 +227,7 @@ curl -XPOST 'http://localhost:9200/_aliases' -d '
         { &quot;add&quot; : { &quot;index&quot; : &quot;test1&quot;, &quot;alias&quot; : &quot;alias2&quot; } }
     ]
 }'
-[/code]
+```
 
 <h3>5. Module Scripting <sup id="fnref-1210-4"><a href="#fn-1210-4" rel="footnote">7</a></sup></h3>
 
@@ -290,14 +290,14 @@ Table of content
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {"aggs":{"sum_like":{"sum":{"field":"num_like"}},"min_like":{"min":{"field":"num_like"}},"avg_like":{"avg":{"field":"num_like"}},"max_like":{"max":{"field":"num_like"}},"sum_share":{"sum":{"field":"num_share"}},"min_share":{"min":{"field":"num_share"}},"avg_share":{"avg":{"field":"num_share"}},"max_share":{"max":{"field":"num_share"}},"sum_comment":{"sum":{"field":"num_comment"}},"min_comment":{"min":{"field":"num_comment"}},"avg_comment":{"avg":{"field":"num_comment"}},"max_comment":{"max":{"field":"num_comment"}}}}
-[/code]
+```
 
 Request
 
-[code lang="javascript"]
+```javascript
 {
 "aggregations": {
       "avg_comment": {
@@ -338,7 +338,7 @@ Request
       }
    }
 }
-[/code]
+```
 
 ### Cardinality Aggregation
 
@@ -348,18 +348,18 @@ Request
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {
     "aggs" : {
         "num_authors" : { "cardinality" : { "field" : "from.fb_id" } }
     }
 }
-[/code]
+```
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
    "aggregations": {
       "num_authors": {
@@ -367,7 +367,7 @@ Response
       }
    }
 }
-[/code]
+```
 
 ### [Stats Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html)
 
@@ -377,7 +377,7 @@ Response
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {
     "aggs" : {
@@ -386,11 +386,11 @@ POST /facebook_crawler/post/_search
         "comments" : { "stats" : { "field" : "num_comment" } }
     }
 }
-[/code]
+```
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
    "aggregations": {
       "shares": {
@@ -416,7 +416,7 @@ Response
       }
    }
 }
-[/code]
+```
 
 
 
@@ -429,7 +429,7 @@ Response
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {
     "aggs" : {
@@ -438,11 +438,11 @@ POST /facebook_crawler/post/_search
         "comment_stats" : { "extended_stats" : { "field" : "num_comment" } }
     }
 }
-[/code]
+```
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
    "aggregations": {
       "like_stats": {
@@ -489,7 +489,7 @@ Response
       }
    }
 }
-[/code]
+```
 
 
 ### Percentiles Aggregation
@@ -500,14 +500,14 @@ Response
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {"aggs":{"like_percentiles":{"percentiles":{"field":"num_like"}},"share_percentiles":{"percentiles":{"field":"num_share"}},"comment_percentiles":{"percentiles":{"field":"num_comment"}}}}
-[/code]
+```
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
 "aggregations": {
       "like_percentiles": {
@@ -545,14 +545,14 @@ Response
       }
    }
 }
-[/code]
+```
 
 
 **Like Percentiles with custom percents**
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {
    "aggs": {
@@ -564,12 +564,12 @@ POST /facebook_crawler/post/_search
       }
    }
 }
-[/code]
+```
 
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
    "aggregations": {
       "share_percentiles": {
@@ -583,7 +583,7 @@ Response
       }
    }
 }
-[/code]
+```
 
 
 ### Percentile Ranks Aggregation
@@ -594,7 +594,7 @@ Response
 
 Request
 
-[code lang="javascript"]
+```javascript
 POST /facebook_crawler/post/_search
 {
    "aggs": {
@@ -618,11 +618,11 @@ POST /facebook_crawler/post/_search
       }
    }
 }
-[/code]
+```
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
    "aggregations": {
       "share_percentile_ranks": {
@@ -657,7 +657,7 @@ Response
       }
    }
 }
-[/code]
+```
 
 > As we can see, only 0.7% posts have more than 10k shares, onley 0.04% posts have more than 10k comment, but there is an odd here. 4.1% posts have more than 1M like (WHAT!!!). We can spot some strange here.
 
@@ -669,40 +669,26 @@ Response
 
 Request
 
-[code lang="javascript"]
-[/code]
+```javascript
+```
 
 Response
 
-[code lang="javascript"]
+```javascript
 {
 
-[/code]
+```
 
 
 ### An Aggregation
 
 [Doc: Link](link)
 
-**Example**
-
-Request
-
-[code lang="javascript"]
-[/code]
-
-Response
-
-[code lang="javascript"]
-{
-
-[/code]
-
 # Config
 
 `elasticsearch.yml`
 
-[code]
+```
 discovery.zen.minimum_master_nodes: 1
 discovery.zen.ping.multicast.enabled: false
 discovery.zen.ping.unicast.hosts: ["localhost"]
@@ -712,7 +698,7 @@ http.cors.enabled: true
 http.cors.allow-origin: '*'
 script.inline: on
 script.indexed: on
-[/code]
+```
 
 # Docker
 
@@ -722,29 +708,29 @@ script.indexed: on
 
 **Run**
 
-[code]
+```
 docker run -d -v "$PWD/esdata":/usr/share/elasticsearch/data elasticsearch
-[/code]
+```
 
 Docker Folder
-[code]
+```
 elasticsearch/
 ├── config
 │   └── elasticsearch.yml
 └── Dockerfile
-[/code]
+```
 
 `Dockerfile`
 
-[code]
+```
 FROM elasticsearch:2.2.0
 
 ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
-[/code]
+```
 
 **Compose**
 
-[code]
+```
 elasticsearch:
     build: ./elasticsearch/.
     ports:
@@ -752,7 +738,7 @@ elasticsearch:
        - 9300:9300
     volumes:
        - ./data/elasticsearch:/usr/share/elasticsearch/data
-[/code]
+```
 
 # Elasticsearch: Search Ignore Accents
 
@@ -761,14 +747,14 @@ The ICU [^1] [^2] analysis plug-in for Elasticsearch uses the International Comp
 
 ## Step 1: Install ICU-Plugin [^3]
 
-[code]
+```
 cd /usr/share/elasticsearch
 sudo bin/plugin install analysis-icu
-[/code]
+```
 
 ## Step 2: Create an analyzer setting:
 
-[code]
+```
 "settings": {
       "analysis": {
          "analyzer": {
@@ -782,20 +768,20 @@ sudo bin/plugin install analysis-icu
          }
       }
    }
-[/code]
+```
 
 ## Step 3: Create your index, create a field with type string and analyzer is `vnanalysis` you have created
 
-[code]
+```
 "key": {
      "type": "string",
      "analyzer": "vnanalysis"
 }
-[/code]
+```
 
 ## Step 4: Search with `sense`
 
-[code]
+```
 POST /your_index/your_doc_type/_search
 {
    "query": {
@@ -804,7 +790,7 @@ POST /your_index/your_doc_type/_search
       }
    }
 }
-[/code]
+```
 
 [^1]: [ICU plug-in Introduction](https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis.html)
 [^2]: [ICU plug-in Github](https://github.com/elastic/elasticsearch-analysis-icu)
@@ -818,20 +804,20 @@ https://gist.github.com/clemsos/8668698
 
 As a matter of best practice we’ll update our packages:
 
-[code]
+```
 apt-get update
-[/code]
+```
 
 The build-essential package should already be installed, however, we’re going still going to include it in our command for installation:
-[code]
+```
 apt-get install build-essential libssl-dev
-[/code]
+```
 
 To install or update nvm, you can use the install script using cURL:
 
-[code]
+```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-[/code]
+```
 
 if you have below problem or after you type `nvm ls-remote` command it result N/A:
 `curl: (77) error setting certificate verify locations:
@@ -844,47 +830,47 @@ head to this [^1]:
 
 or Wget:
 
-[code]
+```
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-[/code]
+```
 
 *Don't forget to restart your terminal*
 
 Then you use the following command to list available versions of nodejs
 
-[code]
+```
 nvm ls-remote
-[/code]
+```
 
 To download, compile, and install the latest v5.0.x release of node, do this:
 
-[code]
+```
 nvm install 5.0
-[/code]
+```
 
 And then in any new shell just use the installed version:
 
-[code]
+```
 nvm use 5.0
-[/code]
+```
 
 Or you can just run it:
 
-[code]
+```
 nvm run 5.0 --version
-[/code]
+```
 
 Or, you can run any arbitrary command in a subshell with the desired version of node:
 
-[code]
+```
 nvm exec 4.2 node --version
-[/code]
+```
 
 You can also get the path to the executable to where it was installed:
 
-[code]
+```
 nvm which 5.0
-[/code]
+```
 
 [Node Version Manager](https://github.com/creationix/nvm)
 

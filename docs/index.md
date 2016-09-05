@@ -29,7 +29,7 @@
 <img class="alignnone" src="http://blog.galaxyweblinks.com/wp-content/uploads/2014/11/industries-using-big-data1-768x1024.png" alt="" />
 
 [^1]: https://www.youtube.com/watch?v=TzxmjbL-i4Y&#160;<a href="#fnref-888-1" rev="footnote">&#8617;</a>
-[^2:]: http://scoop.intel.com/what-happens-in-an-internet-minute/&#160;<a href="#fnref-888-2" rev="footnote">&#8617;</a>
+[^2]: http://scoop.intel.com/what-happens-in-an-internet-minute/&#160;<a href="#fnref-888-2" rev="footnote">&#8617;</a>
 [^3]: http://www.quora.com/How-much-data-is-Big-Data&#160;<a href="#fnref-888-3" rev="footnote">&#8617;</a>
 [^4]: https://en.wikipedia.org/wiki/Big_data#Characteristics&#160;<a href="#fnref-888-4" rev="footnote">&#8617;</a>
 [^5]: http://www.clearpeaks.com/blog/big-data/big-data-ecosystem-spark-and-tableau&#160;<a href="#fnref-888-5" rev="footnote">&#8617;</a>

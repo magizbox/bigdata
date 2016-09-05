@@ -288,39 +288,40 @@
   curl -XPOST /bank/_search
 </blockquote>
 
-<p>[code language="javascript"]
-// match all, limit 10 offset 10
+<pre><code class="javascript">// match all, limit 10 offset 10
 {
-  "query": { "match_all": {} },
-  "from": 10,
-  "size": 10
-}</p>
-<p>// select fields
-{
-  "query": { "match_all": {} },
-  _source: ["account_number", "balance"]
-  "size": 10
-}</p>
-<p>// where account equals 20
-{
-  "query": { "match": { "account_number": 20 } }
+  &quot;query&quot;: { &quot;match_all&quot;: {} },
+  &quot;from&quot;: 10,
+  &quot;size&quot;: 10
 }
-[/code]</p>
+
+// select fields
+{
+  &quot;query&quot;: { &quot;match_all&quot;: {} },
+  _source: [&quot;account_number&quot;, &quot;balance&quot;]
+  &quot;size&quot;: 10
+}
+
+// where account equals 20
+{
+  &quot;query&quot;: { &quot;match&quot;: { &quot;account_number&quot;: 20 } }
+}
+</code></pre>
+
 <p><strong>Filter</strong></p>
-<p>[code]
-curl -XPOST elastic:9200/index/type/_search -d '
+<pre><code>curl -XPOST elastic:9200/index/type/_search -d '
 {
-  "query" : {
-    "filtered" :
+  &quot;query&quot; : {
+    &quot;filtered&quot; :
     {
-      "query" : { "term" : { "feature" : 1 } } ,
-      "filter" : {
-        "and" : [
+      &quot;query&quot; : { &quot;term&quot; : { &quot;feature&quot; : 1 } } ,
+      &quot;filter&quot; : {
+        &quot;and&quot; : [
           {
-            "range": {
-              "_timestamp": {
-                "from": 1441964671000,
-                "to": 1441964672000
+            &quot;range&quot;: {
+              &quot;_timestamp&quot;: {
+                &quot;from&quot;: 1441964671000,
+                &quot;to&quot;: 1441964672000
               }
             }
           }
@@ -329,22 +330,22 @@ curl -XPOST elastic:9200/index/type/_search -d '
     }
   }
 }
-[/code]</p>
+</code></pre>
+
 <p><strong>Sort</strong></p>
-<p>[code]
-curl -XPOST elastic:9200/index/type/_search -d '
+<pre><code>curl -XPOST elastic:9200/index/type/_search -d '
 {
-  "query" : {
-    "filtered" :
+  &quot;query&quot; : {
+    &quot;filtered&quot; :
     {
-      "query" : { "term" : { "feature" : 1 } } ,
-      "filter" : {
-        "and" : [
+      &quot;query&quot; : { &quot;term&quot; : { &quot;feature&quot; : 1 } } ,
+      &quot;filter&quot; : {
+        &quot;and&quot; : [
           {
-            "range": {
-              "_timestamp": {
-                "from": 1441964671000,
-                "to": 1441964672000
+            &quot;range&quot;: {
+              &quot;_timestamp&quot;: {
+                &quot;from&quot;: 1441964671000,
+                &quot;to&quot;: 1441964672000
               }
             }
           }
@@ -353,8 +354,10 @@ curl -XPOST elastic:9200/index/type/_search -d '
     }
   }
 }
-[/code]
-<h3>3. Mapping</h3></p>
+</code></pre>
+
+<h3>3. Mapping</h3>
+
 <h4>Timestamp <sup id="fnref-1210-2"><a href="#fn-1210-2" rel="footnote">2</a></sup></h4>
 
 <p>Enable and store timestamp</p>
@@ -362,18 +365,18 @@ curl -XPOST elastic:9200/index/type/_search -d '
   curl -XPOST localhost:9200/test
 </blockquote>
 
-<p>[code]
-{
-"mappings" : {
-    "<em>default</em>":{
-        "_timestamp" : {
-            "enabled" : true,
-            "store" : true
+<pre><code>{
+&quot;mappings&quot; : {
+    &quot;_default_&quot;:{
+        &quot;_timestamp&quot; : {
+            &quot;enabled&quot; : true,
+            &quot;store&quot; : true
         }
     }
   }
 }'
-[/code]</p>
+</code></pre>
+
 <h3>Relationships Management <sup id="fnref-1210-6"><a href="#fn-1210-6" rel="footnote">3</a></sup> <sup id="fnref-1210-7"><a href="#fn-1210-7" rel="footnote">4</a></sup></h3>
 
 <p><strong>Inner Object</strong></p>
@@ -411,24 +414,24 @@ curl -XPOST elastic:9200/index/type/_search -d '
 <h4>Elastic Dump <sup id="fnref-1210-3"><a href="#fn-1210-3" rel="footnote">5</a></sup></h4>
 
 <p>Tools for moving and saving indicies.</p>
-<p>[code]
-bin/elasticdump
+<pre><code>bin/elasticdump
   --input=http://localhost:9200/index_1
   --output=http://localhost:9200/index_1_backup
   --type=data
   --scrollTime=100
-[/code]</p>
+</code></pre>
+
 <h4>Alias <sup id="fnref-1210-5"><a href="#fn-1210-5" rel="footnote">6</a></sup></h4>
 
-<p>[code]
-curl -XPOST 'http://localhost:9200/_aliases' -d '
+<pre><code>curl -XPOST 'http://localhost:9200/_aliases' -d '
 {
-    &quot;actions&quot; : [
-        { &quot;remove&quot; : { &quot;index&quot; : &quot;test1&quot;, &quot;alias&quot; : &quot;alias1&quot; } },
-        { &quot;add&quot; : { &quot;index&quot; : &quot;test1&quot;, &quot;alias&quot; : &quot;alias2&quot; } }
+    &amp;quot;actions&amp;quot; : [
+        { &amp;quot;remove&amp;quot; : { &amp;quot;index&amp;quot; : &amp;quot;test1&amp;quot;, &amp;quot;alias&amp;quot; : &amp;quot;alias1&amp;quot; } },
+        { &amp;quot;add&amp;quot; : { &amp;quot;index&amp;quot; : &amp;quot;test1&amp;quot;, &amp;quot;alias&amp;quot; : &amp;quot;alias2&amp;quot; } }
     ]
 }'
-[/code]</p>
+</code></pre>
+
 <h3>5. Module Scripting <sup id="fnref-1210-4"><a href="#fn-1210-4" rel="footnote">7</a></sup></h3>
 
 <h3>Ranking</h3>
@@ -484,325 +487,325 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scriptin
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-avg-aggregation.html#search-aggregations-metrics-avg-aggregation">Doc: Avg Aggregation</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-max-aggregation.html">Doc: Max Aggregation</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-min-aggregation.html">Doc: Min Aggregation</a></p>
 <p><strong>Get max, min, avg, sum, count about number of likes, shares, comments</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
-{"aggs":{"sum_like":{"sum":{"field":"num_like"}},"min_like":{"min":{"field":"num_like"}},"avg_like":{"avg":{"field":"num_like"}},"max_like":{"max":{"field":"num_like"}},"sum_share":{"sum":{"field":"num_share"}},"min_share":{"min":{"field":"num_share"}},"avg_share":{"avg":{"field":"num_share"}},"max_share":{"max":{"field":"num_share"}},"sum_comment":{"sum":{"field":"num_comment"}},"min_comment":{"min":{"field":"num_comment"}},"avg_comment":{"avg":{"field":"num_comment"}},"max_comment":{"max":{"field":"num_comment"}}}}
-[/code]</p>
+<pre><code class="javascript">POST /facebook_crawler/post/_search
+{&quot;aggs&quot;:{&quot;sum_like&quot;:{&quot;sum&quot;:{&quot;field&quot;:&quot;num_like&quot;}},&quot;min_like&quot;:{&quot;min&quot;:{&quot;field&quot;:&quot;num_like&quot;}},&quot;avg_like&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;num_like&quot;}},&quot;max_like&quot;:{&quot;max&quot;:{&quot;field&quot;:&quot;num_like&quot;}},&quot;sum_share&quot;:{&quot;sum&quot;:{&quot;field&quot;:&quot;num_share&quot;}},&quot;min_share&quot;:{&quot;min&quot;:{&quot;field&quot;:&quot;num_share&quot;}},&quot;avg_share&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;num_share&quot;}},&quot;max_share&quot;:{&quot;max&quot;:{&quot;field&quot;:&quot;num_share&quot;}},&quot;sum_comment&quot;:{&quot;sum&quot;:{&quot;field&quot;:&quot;num_comment&quot;}},&quot;min_comment&quot;:{&quot;min&quot;:{&quot;field&quot;:&quot;num_comment&quot;}},&quot;avg_comment&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;num_comment&quot;}},&quot;max_comment&quot;:{&quot;max&quot;:{&quot;field&quot;:&quot;num_comment&quot;}}}}
+</code></pre>
+
 <p>Request</p>
-<p>[code lang="javascript"]
-{
-"aggregations": {
-      "avg_comment": {
-         "value": 75.23860589812332
+<pre><code class="javascript">{
+&quot;aggregations&quot;: {
+      &quot;avg_comment&quot;: {
+         &quot;value&quot;: 75.23860589812332
       },
-      "min_like": {
-         "value": 0
+      &quot;min_like&quot;: {
+         &quot;value&quot;: 0
       },
-      "avg_like": {
-         "value": 1761974365266098.2
+      &quot;avg_like&quot;: {
+         &quot;value&quot;: 1761974365266098.2
       },
-      "sum_like": {
-         "value": 3238508883359088600
+      &quot;sum_like&quot;: {
+         &quot;value&quot;: 3238508883359088600
       },
-      "max_share": {
-         "value": 30407
+      &quot;max_share&quot;: {
+         &quot;value&quot;: 30407
       },
-      "max_comment": {
-         "value": 11000
+      &quot;max_comment&quot;: {
+         &quot;value&quot;: 11000
       },
-      "sum_share": {
-         "value": 117844
+      &quot;sum_share&quot;: {
+         &quot;value&quot;: 117844
       },
-      "max_like": {
-         "value": 2751488761761411000
+      &quot;max_like&quot;: {
+         &quot;value&quot;: 2751488761761411000
       },
-      "avg_share": {
-         "value": 250.19957537154988
+      &quot;avg_share&quot;: {
+         &quot;value&quot;: 250.19957537154988
       },
-      "sum_comment": {
-         "value": 28064
+      &quot;sum_comment&quot;: {
+         &quot;value&quot;: 28064
       },
-      "min_comment": {
-         "value": 2
+      &quot;min_comment&quot;: {
+         &quot;value&quot;: 2
       },
-      "min_share": {
-         "value": 1
+      &quot;min_share&quot;: {
+         &quot;value&quot;: 1
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <h3 id="cardinality-aggregation">Cardinality Aggregation</h3>
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-cardinality-aggregation.html#search-aggregations-metrics-cardinality-aggregation">Cardinality Aggregation</a></p>
 <p><strong>Get total of users</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
+<pre><code class="javascript">POST /facebook_crawler/post/_search
 {
-    "aggs" : {
-        "num_authors" : { "cardinality" : { "field" : "from.fb_id" } }
+    &quot;aggs&quot; : {
+        &quot;num_authors&quot; : { &quot;cardinality&quot; : { &quot;field&quot; : &quot;from.fb_id&quot; } }
     }
 }
-[/code]</p>
+</code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{
-   "aggregations": {
-      "num_authors": {
-         "value": 7385
+<pre><code class="javascript">{
+   &quot;aggregations&quot;: {
+      &quot;num_authors&quot;: {
+         &quot;value&quot;: 7385
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <h3 id="stats-aggregation"><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html">Stats Aggregation</a></h3>
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html">Doc: Stats Aggregation</a></p>
 <p><strong>Basic Stats of like, share &amp; comment</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
+<pre><code class="javascript">POST /facebook_crawler/post/_search
 {
-    "aggs" : {
-        "shares" : { "stats" : { "field" : "num_share" } },
-        "likes" : { "stats" : { "field" : "num_like" } },
-        "comments" : { "stats" : { "field" : "num_comment" } }
+    &quot;aggs&quot; : {
+        &quot;shares&quot; : { &quot;stats&quot; : { &quot;field&quot; : &quot;num_share&quot; } },
+        &quot;likes&quot; : { &quot;stats&quot; : { &quot;field&quot; : &quot;num_like&quot; } },
+        &quot;comments&quot; : { &quot;stats&quot; : { &quot;field&quot; : &quot;num_comment&quot; } }
     }
 }
-[/code]</p>
+</code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{
-   "aggregations": {
-      "shares": {
-         "count": 471,
-         "min": 1,
-         "max": 30407,
-         "avg": 250.19957537154988,
-         "sum": 117844
+<pre><code class="javascript">{
+   &quot;aggregations&quot;: {
+      &quot;shares&quot;: {
+         &quot;count&quot;: 471,
+         &quot;min&quot;: 1,
+         &quot;max&quot;: 30407,
+         &quot;avg&quot;: 250.19957537154988,
+         &quot;sum&quot;: 117844
       },
-      "comments": {
-         "count": 373,
-         "min": 2,
-         "max": 11000,
-         "avg": 75.23860589812332,
-         "sum": 28064
+      &quot;comments&quot;: {
+         &quot;count&quot;: 373,
+         &quot;min&quot;: 2,
+         &quot;max&quot;: 11000,
+         &quot;avg&quot;: 75.23860589812332,
+         &quot;sum&quot;: 28064
       },
-      "likes": {
-         "count": 1838,
-         "min": 0,
-         "max": 2751488761761411000,
-         "avg": 1761974365266098.2,
-         "sum": 3238508883359088600
+      &quot;likes&quot;: {
+         &quot;count&quot;: 1838,
+         &quot;min&quot;: 0,
+         &quot;max&quot;: 2751488761761411000,
+         &quot;avg&quot;: 1761974365266098.2,
+         &quot;sum&quot;: 3238508883359088600
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <h3 id="extended-stats-aggregation">Extended Stats Aggregation</h3>
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-extendedstats-aggregation.html">Extended Stats Aggregation</a></p>
 <p><strong>Stats of like, share &amp; comment with more metrics, such as sum, std_deviation, std_deviation_bounds, variance</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
+<pre><code class="javascript">POST /facebook_crawler/post/_search
 {
-    "aggs" : {
-        "like_stats" : { "extended_stats" : { "field" : "num_like" } },
-        "share_stats" : { "extended_stats" : { "field" : "num_share" } },
-        "comment_stats" : { "extended_stats" : { "field" : "num_comment" } }
+    &quot;aggs&quot; : {
+        &quot;like_stats&quot; : { &quot;extended_stats&quot; : { &quot;field&quot; : &quot;num_like&quot; } },
+        &quot;share_stats&quot; : { &quot;extended_stats&quot; : { &quot;field&quot; : &quot;num_share&quot; } },
+        &quot;comment_stats&quot; : { &quot;extended_stats&quot; : { &quot;field&quot; : &quot;num_comment&quot; } }
     }
 }
-[/code]</p>
+</code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{
-   "aggregations": {
-      "like_stats": {
-         "count": 1838,
-         "min": 0,
-         "max": 2751488761761411000,
-         "avg": 1761974365266098.2,
-         "sum": 3238508883359088600,
-         "sum_of_squares": 7.667542671405507e+36,
-         "variance": 4.168572634260795e+33,
-         "std_deviation": 64564484310345070,
-         "std_deviation_bounds": {
-            "upper": 130890942985956240,
-            "lower": -127366994255424050
+<pre><code class="javascript">{
+   &quot;aggregations&quot;: {
+      &quot;like_stats&quot;: {
+         &quot;count&quot;: 1838,
+         &quot;min&quot;: 0,
+         &quot;max&quot;: 2751488761761411000,
+         &quot;avg&quot;: 1761974365266098.2,
+         &quot;sum&quot;: 3238508883359088600,
+         &quot;sum_of_squares&quot;: 7.667542671405507e+36,
+         &quot;variance&quot;: 4.168572634260795e+33,
+         &quot;std_deviation&quot;: 64564484310345070,
+         &quot;std_deviation_bounds&quot;: {
+            &quot;upper&quot;: 130890942985956240,
+            &quot;lower&quot;: -127366994255424050
          }
       },
-      "share_stats": {
-         "count": 471,
-         "min": 1,
-         "max": 30407,
-         "avg": 250.19957537154988,
-         "sum": 117844,
-         "sum_of_squares": 1769467022,
-         "variance": 3694230.367812983,
-         "std_deviation": 1922.0380765773043,
-         "std_deviation_bounds": {
-            "upper": 4094.2757285261587,
-            "lower": -3593.8765777830586
+      &quot;share_stats&quot;: {
+         &quot;count&quot;: 471,
+         &quot;min&quot;: 1,
+         &quot;max&quot;: 30407,
+         &quot;avg&quot;: 250.19957537154988,
+         &quot;sum&quot;: 117844,
+         &quot;sum_of_squares&quot;: 1769467022,
+         &quot;variance&quot;: 3694230.367812983,
+         &quot;std_deviation&quot;: 1922.0380765773043,
+         &quot;std_deviation_bounds&quot;: {
+            &quot;upper&quot;: 4094.2757285261587,
+            &quot;lower&quot;: -3593.8765777830586
          }
       },
-      "comment_stats": {
-         "count": 373,
-         "min": 2,
-         "max": 11000,
-         "avg": 75.23860589812332,
-         "sum": 28064,
-         "sum_of_squares": 131531392,
-         "variance": 346970.2299304962,
-         "std_deviation": 589.0417896299856,
-         "std_deviation_bounds": {
-            "upper": 1253.3221851580945,
-            "lower": -1102.844973361848
+      &quot;comment_stats&quot;: {
+         &quot;count&quot;: 373,
+         &quot;min&quot;: 2,
+         &quot;max&quot;: 11000,
+         &quot;avg&quot;: 75.23860589812332,
+         &quot;sum&quot;: 28064,
+         &quot;sum_of_squares&quot;: 131531392,
+         &quot;variance&quot;: 346970.2299304962,
+         &quot;std_deviation&quot;: 589.0417896299856,
+         &quot;std_deviation_bounds&quot;: {
+            &quot;upper&quot;: 1253.3221851580945,
+            &quot;lower&quot;: -1102.844973361848
          }
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <h3 id="percentiles-aggregation">Percentiles Aggregation</h3>
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-aggregation.html">Doc: Percentiles Aggregation</a></p>
 <p><strong>Comment, Like, Share Percentiles</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
-{"aggs":{"like_percentiles":{"percentiles":{"field":"num_like"}},"share_percentiles":{"percentiles":{"field":"num_share"}},"comment_percentiles":{"percentiles":{"field":"num_comment"}}}}
-[/code]</p>
+<pre><code class="javascript">POST /facebook_crawler/post/_search
+{&quot;aggs&quot;:{&quot;like_percentiles&quot;:{&quot;percentiles&quot;:{&quot;field&quot;:&quot;num_like&quot;}},&quot;share_percentiles&quot;:{&quot;percentiles&quot;:{&quot;field&quot;:&quot;num_share&quot;}},&quot;comment_percentiles&quot;:{&quot;percentiles&quot;:{&quot;field&quot;:&quot;num_comment&quot;}}}}
+</code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{
-"aggregations": {
-      "like_percentiles": {
-         "values": {
-            "1.0": 0,
-            "5.0": 0,
-            "25.0": 4,
-            "50.0": 18.35,
-            "75.0": 72.53579545454545,
-            "95.0": 71343.74999999999,
-            "99.0": 4338260523723.276
+<pre><code class="javascript">{
+&quot;aggregations&quot;: {
+      &quot;like_percentiles&quot;: {
+         &quot;values&quot;: {
+            &quot;1.0&quot;: 0,
+            &quot;5.0&quot;: 0,
+            &quot;25.0&quot;: 4,
+            &quot;50.0&quot;: 18.35,
+            &quot;75.0&quot;: 72.53579545454545,
+            &quot;95.0&quot;: 71343.74999999999,
+            &quot;99.0&quot;: 4338260523723.276
          }
       },
-      "comment_percentiles": {
-         "values": {
-            "1.0": 2,
-            "5.0": 2,
-            "25.0": 5,
-            "50.0": 10,
-            "75.0": 26,
-            "95.0": 139.39999999999998,
-            "99.0": 1000
+      &quot;comment_percentiles&quot;: {
+         &quot;values&quot;: {
+            &quot;1.0&quot;: 2,
+            &quot;5.0&quot;: 2,
+            &quot;25.0&quot;: 5,
+            &quot;50.0&quot;: 10,
+            &quot;75.0&quot;: 26,
+            &quot;95.0&quot;: 139.39999999999998,
+            &quot;99.0&quot;: 1000
          }
       },
-      "share_percentiles": {
-         "values": {
-            "1.0": 1,
-            "5.0": 1,
-            "25.0": 1,
-            "50.0": 4,
-            "75.0": 25,
-            "95.0": 251.5,
-            "99.0": 5560.3
+      &quot;share_percentiles&quot;: {
+         &quot;values&quot;: {
+            &quot;1.0&quot;: 1,
+            &quot;5.0&quot;: 1,
+            &quot;25.0&quot;: 1,
+            &quot;50.0&quot;: 4,
+            &quot;75.0&quot;: 25,
+            &quot;95.0&quot;: 251.5,
+            &quot;99.0&quot;: 5560.3
          }
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <p><strong>Like Percentiles with custom percents</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
+<pre><code class="javascript">POST /facebook_crawler/post/_search
 {
-   "aggs": {
-      "share_percentiles": {
-         "percentiles": {
-            "field": "num_share",
-            "percents": [0, 10, 80, 90, 95]
+   &quot;aggs&quot;: {
+      &quot;share_percentiles&quot;: {
+         &quot;percentiles&quot;: {
+            &quot;field&quot;: &quot;num_share&quot;,
+            &quot;percents&quot;: [0, 10, 80, 90, 95]
          }
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{
-   "aggregations": {
-      "share_percentiles": {
-         "values": {
-            "0.0": 1,
-            "10.0": 1,
-            "80.0": 37.33333333333333,
-            "90.0": 97,
-            "95.0": 251.5
+<pre><code class="javascript">{
+   &quot;aggregations&quot;: {
+      &quot;share_percentiles&quot;: {
+         &quot;values&quot;: {
+            &quot;0.0&quot;: 1,
+            &quot;10.0&quot;: 1,
+            &quot;80.0&quot;: 37.33333333333333,
+            &quot;90.0&quot;: 97,
+            &quot;95.0&quot;: 251.5
          }
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <h3 id="percentile-ranks-aggregation">Percentile Ranks Aggregation</h3>
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-rank-aggregation.html">Doc: Percentile Ranks Aggregation</a></p>
 <p><strong>How like, share, comment distribute</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-POST /facebook_crawler/post/_search
+<pre><code class="javascript">POST /facebook_crawler/post/_search
 {
-   "aggs": {
-      "like_percentile_ranks": {
-         "percentile_ranks": {
-            "field": "num_like",
-            "values": [10, 100, 1000, 10000, 1000000, 10000000]
+   &quot;aggs&quot;: {
+      &quot;like_percentile_ranks&quot;: {
+         &quot;percentile_ranks&quot;: {
+            &quot;field&quot;: &quot;num_like&quot;,
+            &quot;values&quot;: [10, 100, 1000, 10000, 1000000, 10000000]
          }
       },
-      "share_percentile_ranks": {
-         "percentile_ranks": {
-            "field": "num_share",
-            "values": [10, 100, 1000, 10000, 1000000, 10000000]
+      &quot;share_percentile_ranks&quot;: {
+         &quot;percentile_ranks&quot;: {
+            &quot;field&quot;: &quot;num_share&quot;,
+            &quot;values&quot;: [10, 100, 1000, 10000, 1000000, 10000000]
          }
       },
-      "comment_percentile_ranks": {
-         "percentile_ranks": {
-            "field": "num_comment",
-            "values": [10, 100, 1000, 10000, 1000000, 10000000]
+      &quot;comment_percentile_ranks&quot;: {
+         &quot;percentile_ranks&quot;: {
+            &quot;field&quot;: &quot;num_comment&quot;,
+            &quot;values&quot;: [10, 100, 1000, 10000, 1000000, 10000000]
          }
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{
-   "aggregations": {
-      "share_percentile_ranks": {
-         "values": {
-            "10.0": 60.438782731776364,
-            "100.0": 89.91507430997878,
-            "1000.0": 97.37406386327386,
-            "10000.0": 99.31579836222765,
-            "1000000.0": 100,
-            "1.0E7": 100
+<pre><code class="javascript">{
+   &quot;aggregations&quot;: {
+      &quot;share_percentile_ranks&quot;: {
+         &quot;values&quot;: {
+            &quot;10.0&quot;: 60.438782731776364,
+            &quot;100.0&quot;: 89.91507430997878,
+            &quot;1000.0&quot;: 97.37406386327386,
+            &quot;10000.0&quot;: 99.31579836222765,
+            &quot;1000000.0&quot;: 100,
+            &quot;1.0E7&quot;: 100
          }
       },
-      "like_percentile_ranks": {
-         "values": {
-            "10.0": 39.281828073993466,
-            "100.0": 79.39530545624125,
-            "1000.0": 90.98349676683587,
-            "10000.0": 94.14527905373414,
-            "1000000.0": 95.9014681663581,
-            "1.0E7": 96.57661015941164
+      &quot;like_percentile_ranks&quot;: {
+         &quot;values&quot;: {
+            &quot;10.0&quot;: 39.281828073993466,
+            &quot;100.0&quot;: 79.39530545624125,
+            &quot;1000.0&quot;: 90.98349676683587,
+            &quot;10000.0&quot;: 94.14527905373414,
+            &quot;1000000.0&quot;: 95.9014681663581,
+            &quot;1.0E7&quot;: 96.57661015941164
          }
       },
-      "comment_percentile_ranks": {
-         "values": {
-            "10.0": 49.865951742627345,
-            "100.0": 92.18395545473294,
-            "1000.0": 98.92761394101876,
-            "10000.0": 99.56773202397807,
-            "1000000.0": 100,
-            "1.0E7": 100
+      &quot;comment_percentile_ranks&quot;: {
+         &quot;values&quot;: {
+            &quot;10.0&quot;: 49.865951742627345,
+            &quot;100.0&quot;: 92.18395545473294,
+            &quot;1000.0&quot;: 98.92761394101876,
+            &quot;10000.0&quot;: 99.56773202397807,
+            &quot;1000000.0&quot;: 100,
+            &quot;1.0E7&quot;: 100
          }
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <blockquote>
 <p>As we can see, only 0.7% posts have more than 10k shares, onley 0.04% posts have more than 10k comment, but there is an odd here. 4.1% posts have more than 1M like (WHAT!!!). We can spot some strange here.</p>
 </blockquote>
@@ -810,153 +813,148 @@ POST /facebook_crawler/post/_search
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-top-hits-aggregation.html">Doc: Top hits Aggregation</a></p>
 <p><strong>Example</strong></p>
 <p>Request</p>
-<p>[code lang="javascript"]
-[/code]</p>
+<pre><code class="javascript"></code></pre>
+
 <p>Response</p>
-<p>[code lang="javascript"]
-{</p>
-<p>[/code]</p>
+<pre><code class="javascript">{
+
+</code></pre>
+
 <h3 id="an-aggregation">An Aggregation</h3>
 <p><a href="../link">Doc: Link</a></p>
-<p><strong>Example</strong></p>
-<p>Request</p>
-<p>[code lang="javascript"]
-[/code]</p>
-<p>Response</p>
-<p>[code lang="javascript"]
-{</p>
-<p>[/code]</p>
 <h1 id="config">Config</h1>
 <p><code>elasticsearch.yml</code></p>
-<p>[code]
-discovery.zen.minimum_master_nodes: 1
+<pre><code>discovery.zen.minimum_master_nodes: 1
 discovery.zen.ping.multicast.enabled: false
-discovery.zen.ping.unicast.hosts: ["localhost"]</p>
-<p>network.host: 0.0.0.0
+discovery.zen.ping.unicast.hosts: [&quot;localhost&quot;]
+
+network.host: 0.0.0.0
 http.cors.enabled: true
 http.cors.allow-origin: '*'
 script.inline: on
 script.indexed: on
-[/code]</p>
+</code></pre>
+
 <h1 id="docker">Docker</h1>
 <p><strong>Image</strong></p>
 <p><a href="https://hub.docker.com/r/_/elasticsearch/">https://hub.docker.com/r/_/elasticsearch/</a></p>
 <p><strong>Run</strong></p>
-<p>[code]
-docker run -d -v "$PWD/esdata":/usr/share/elasticsearch/data elasticsearch
-[/code]</p>
-<p>Docker Folder
-[code]
-elasticsearch/
+<pre><code>docker run -d -v &quot;$PWD/esdata&quot;:/usr/share/elasticsearch/data elasticsearch
+</code></pre>
+
+<p>Docker Folder</p>
+<pre><code>elasticsearch/
 ├── config
 │   └── elasticsearch.yml
 └── Dockerfile
-[/code]</p>
+</code></pre>
+
 <p><code>Dockerfile</code></p>
-<p>[code]
-FROM elasticsearch:2.2.0</p>
-<p>ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
-[/code]</p>
+<pre><code>FROM elasticsearch:2.2.0
+
+ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+</code></pre>
+
 <p><strong>Compose</strong></p>
-<p>[code]
-elasticsearch:
+<pre><code>elasticsearch:
     build: ./elasticsearch/.
     ports:
        - 9200:9200
        - 9300:9300
     volumes:
        - ./data/elasticsearch:/usr/share/elasticsearch/data
-[/code]</p>
+</code></pre>
+
 <h1 id="elasticsearch-search-ignore-accents">Elasticsearch: Search Ignore Accents</h1>
 <p>The ICU <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> analysis plug-in for Elasticsearch uses the International Components for Unicode (ICU) libraries to provide a rich set of tools for dealing with Unicode. These include the icu_tokenizer, which is particularly useful for Asian languages, and a number of token filters that are essential for correct matching and sorting in all languages other than English.</p>
 <h2 id="step-1-install-icu-plugin-3">Step 1: Install ICU-Plugin <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></h2>
-<p>[code]
-cd /usr/share/elasticsearch
+<pre><code>cd /usr/share/elasticsearch
 sudo bin/plugin install analysis-icu
-[/code]</p>
+</code></pre>
+
 <h2 id="step-2-create-an-analyzer-setting">Step 2: Create an analyzer setting:</h2>
-<p>[code]
-"settings": {
-      "analysis": {
-         "analyzer": {
-            "vnanalysis": {
-               "tokenizer": "icu_tokenizer",
-               "filter": [
-                  "icu_folding",
-                  "icu_normalizer"
+<pre><code>&quot;settings&quot;: {
+      &quot;analysis&quot;: {
+         &quot;analyzer&quot;: {
+            &quot;vnanalysis&quot;: {
+               &quot;tokenizer&quot;: &quot;icu_tokenizer&quot;,
+               &quot;filter&quot;: [
+                  &quot;icu_folding&quot;,
+                  &quot;icu_normalizer&quot;
                ]
             }
          }
       }
    }
-[/code]</p>
+</code></pre>
+
 <h2 id="step-3-create-your-index-create-a-field-with-type-string-and-analyzer-is-vnanalysis-you-have-created">Step 3: Create your index, create a field with type string and analyzer is <code>vnanalysis</code> you have created</h2>
-<p>[code]
-"key": {
-     "type": "string",
-     "analyzer": "vnanalysis"
+<pre><code>&quot;key&quot;: {
+     &quot;type&quot;: &quot;string&quot;,
+     &quot;analyzer&quot;: &quot;vnanalysis&quot;
 }
-[/code]</p>
+</code></pre>
+
 <h2 id="step-4-search-with-sense">Step 4: Search with <code>sense</code></h2>
-<p>[code]
-POST /your_index/your_doc_type/_search
+<pre><code>POST /your_index/your_doc_type/_search
 {
-   "query": {
-      "match": {
-         "key": "kiem tra"
+   &quot;query&quot;: {
+      &quot;match&quot;: {
+         &quot;key&quot;: &quot;kiem tra&quot;
       }
    }
 }
-[/code]</p>
+</code></pre>
+
 <h1 id="es-import-csv-to-elasticsearch">ES: Import CSV to Elasticsearch</h1>
 <p>https://gist.github.com/clemsos/8668698</p>
 <h1 id="install-lastest-elasticdump-with-nvm">Install lastest Elasticdump with NVM</h1>
 <p>As a matter of best practice we’ll update our packages:</p>
-<p>[code]
-apt-get update
-[/code]</p>
-<p>The build-essential package should already be installed, however, we’re going still going to include it in our command for installation:
-[code]
-apt-get install build-essential libssl-dev
-[/code]</p>
+<pre><code>apt-get update
+</code></pre>
+
+<p>The build-essential package should already be installed, however, we’re going still going to include it in our command for installation:</p>
+<pre><code>apt-get install build-essential libssl-dev
+</code></pre>
+
 <p>To install or update nvm, you can use the install script using cURL:</p>
-<p>[code]
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-[/code]</p>
+<pre><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+</code></pre>
+
 <p>if you have below problem or after you type <code>nvm ls-remote</code> command it result N/A:
 <code>curl: (77) error setting certificate verify locations:
   CAfile: /etc/pki/tls/certs/ca-bundle.crt
   CApath: none</code></p>
 <p>head to this <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>:</p>
 <p>or Wget:</p>
-<p>[code]
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-[/code]</p>
+<pre><code>wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+</code></pre>
+
 <p><em>Don't forget to restart your terminal</em></p>
 <p>Then you use the following command to list available versions of nodejs</p>
-<p>[code]
-nvm ls-remote
-[/code]</p>
+<pre><code>nvm ls-remote
+</code></pre>
+
 <p>To download, compile, and install the latest v5.0.x release of node, do this:</p>
-<p>[code]
-nvm install 5.0
-[/code]</p>
+<pre><code>nvm install 5.0
+</code></pre>
+
 <p>And then in any new shell just use the installed version:</p>
-<p>[code]
-nvm use 5.0
-[/code]</p>
+<pre><code>nvm use 5.0
+</code></pre>
+
 <p>Or you can just run it:</p>
-<p>[code]
-nvm run 5.0 --version
-[/code]</p>
+<pre><code>nvm run 5.0 --version
+</code></pre>
+
 <p>Or, you can run any arbitrary command in a subshell with the desired version of node:</p>
-<p>[code]
-nvm exec 4.2 node --version
-[/code]</p>
+<pre><code>nvm exec 4.2 node --version
+</code></pre>
+
 <p>You can also get the path to the executable to where it was installed:</p>
-<p>[code]
-nvm which 5.0
-[/code]</p>
+<pre><code>nvm which 5.0
+</code></pre>
+
 <p><a href="https://github.com/creationix/nvm">Node Version Manager</a></p>
 <div class="footnote">
 <hr />
