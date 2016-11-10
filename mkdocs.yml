@@ -11,7 +11,6 @@ pages:
   - "Apache Nutch": 'nutch.md'
   - "Kibana": 'kibana.md'
   - "Logstash": 'logstash.md'
-  - "Neo4J": 'neo4j.md'
   - "Elasticsearch": 'elasticsearch.md'
 markdown_extensions:
     - footnotes
