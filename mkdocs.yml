@@ -8,7 +8,6 @@ pages:
   - "Apache Spark": 'spark.md'
 - "Components":
   - "Apache Ambari": 'ambari.md'
-  - "Apache Nutch": 'nutch.md'
   - "Kibana": 'kibana.md'
   - "Logstash": 'logstash.md'
   - "Elasticsearch": 'elasticsearch.md'
